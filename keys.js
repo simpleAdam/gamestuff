@@ -1,29 +1,30 @@
-function addListeners(ref) {
-
-const keyModel={}
+function addListeners() {
+  const keyModel={}
 
   function onKeyDown(e) {
-  if (e.keyCode === KEY_CODE_LEFT) {
-    ref.left = true;
-  } else if (e.keyCode === KEY_CODE_RIGHT) {
-    ref.right = true;
-  } else if (e.keyCode === KEY_CODE_SPACE) {
-    ref.space = true;
+  if (e.key === "ArrowLeft") {
+    keyModel.left = true;
+  } else if (e.key === "ArrowRight") {
+    keyModel.right = true;
+  } else if (e.key === " ") {
+    keyModel.space = true;
   }
 }
 
 function onKeyUp(e) {
-  if (e.keyCode === KEY_CODE_LEFT) {
-    ref.left = false;
-  } else if (e.keyCode === KEY_CODE_RIGHT) {
-    ref.right = false;
-  } else if (e.keyCode === KEY_CODE_SPACE) {
-    ref.space = false;
+  if (e.key === "ArrowLeft") {
+    keyModel.left = false;
+  } else if (e.key === "ArrowRight") {
+    keyModel.right = false;
+  } else if (e.key === " ") {
+    keyModel.space = false;
   }
 }
 
-window,addEventListner('keydown',onKeyDown)
-window,addEventListner('keyup',onKeyUp)
+window.addEventListener('keydown',onKeyDown)
+window.addEventListener('keyup',onKeyUp)
 
 return keyModel
-}
+} 
+
+const keyModel=addListeners()
