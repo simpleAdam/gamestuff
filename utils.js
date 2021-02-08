@@ -11,3 +11,7 @@ function clamp(value, min, max) {
 function randomRange(min, max) {
   return Math.random() * (max - min) + min;
 }
+
+function lerp(start, end, time) {
+    return start * (1 - time) + end * time;
+}
