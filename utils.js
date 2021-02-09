@@ -15,3 +15,7 @@ function randomRange(min, max) {
 function lerp(start, end, time) {
     return start * (1 - time) + end * time;
 }
+
+function nlerp(a,b,t) {
+ return a + (b-a) * ((1-Math.cos(t*Math.PI))/2);
+}
