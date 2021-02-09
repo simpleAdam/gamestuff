@@ -19,3 +19,12 @@ function lerp(start, end, time) {
 function nlerp(a,b,t) {
  return a + (b-a) * ((1-Math.cos(t*Math.PI))/2);
 }
+
+function randomisedArrayOfNumbers(len) {
+  const perm = [];
+  while (perm.length < len){
+      while(perm.includes(val = Math.floor(Math.random()*len)));
+      perm.push(val);
+  }
+  return perm
+}
