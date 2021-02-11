@@ -40,9 +40,9 @@ Bullet.prototype.update = function() {
 
 class EntityWithTraits {
     constructor() {
-        this.pos= new Vec2(0,0);
-        this.vel = new Vec2(0,0);
-        this.size = new Vec2(0,0)
+        this.pos= {x:0,y:0};
+        this.vel = {x:0,y:0};
+        this.size = {x:0,y:0};
         
         this.traits=[];
     }
