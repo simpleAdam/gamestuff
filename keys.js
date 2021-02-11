@@ -29,7 +29,7 @@ return keyModel
 
 
 
-
+// version 2
 function InputHandler() {
 	this.down = {};
 	this.pressed = {};
@@ -57,3 +57,15 @@ InputHandler.prototype.isPressed = function(code) {
 	}
 	return false;
 };
+
+
+
+// version 3
+let keys={last:''}
+window.addEventListener('keydown',(e) => {
+	keys.last=e.key
+	keys[e.key]=true
+})
+window.addEventListener('keyup',(e) => {
+	keys[e.key]=false
+})
