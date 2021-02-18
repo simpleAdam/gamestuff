@@ -1,3 +1,39 @@
+function loop1() {
+	console.log(Math.random())
+}
+
+setInterval(loop,30)
+
+
+
+function loop2() {
+	console.log(Math.random())
+
+	setTimeout(loop2,80)
+}
+loop2()
+
+
+function loop3(dt) {
+	let totalTime=dt
+
+	function loop4(dt) {
+		
+		let timepast=dt-totalTime
+		console.log(dt,timepast)
+
+		totalTime=dt;
+
+		requestAnimationFrame(loop4)
+	}
+
+	requestAnimationFrame(loop4)
+}
+
+requestAnimationFrame(loop3)
+
+
+
 class Timer
 {
 	constructor(deltaTime = 1 / 60)
