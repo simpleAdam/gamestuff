@@ -69,3 +69,32 @@ window.addEventListener('keydown',(e) => {
 window.addEventListener('keyup',(e) => {
 	keys[e.key]=false
 })
+
+
+
+// version 4
+function keyPush(evt) {
+    if (!paused) {
+        switch (evt.keyCode) {
+            case 37:
+                xv = -1; yv = 0;
+                break;
+            case 38:
+                xv = 0; yv = -1;
+                break;
+            case 39:
+                xv = 1; yv = 0;
+                break;
+            case 40:
+                xv = 0; yv = 1;
+                break;
+        }
+    }
+    if (evt.keyCode === 32) {
+        let temp = [xv, yv];
+        xv = pre_pause[0];
+        yv = pre_pause[1];
+        pre_pause = [...temp];
+        paused = !paused;
+    }
+}
