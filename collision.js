@@ -24,14 +24,6 @@ function collides(shape)
 
 
 
-rectFromGameObject() {
-    return {
-      top: this.y,
-      left: this.x,
-      bottom: this.y + this.height,
-      right: this.x + this.width,
-    };
-  }
 function intersectRect(r1, r2) {
   return !(
     r2.left > r1.right ||
