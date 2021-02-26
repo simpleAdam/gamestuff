@@ -92,3 +92,17 @@ class EntityWithTraits {
     c.fillStyle = this.color;
     c.fillRect(this.x,this.y,10,10);
   };
+
+
+
+/* convert x,y,width,height to top,left,bottom,right
+
+rectFromGameObject() {
+    return {
+      top: this.y,
+      left: this.x,
+      bottom: this.y + this.height,
+      right: this.x + this.width,
+    };
+  }
+  */
