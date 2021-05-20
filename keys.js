@@ -98,3 +98,25 @@ function keyPush(evt) {
         paused = !paused;
     }
 }
+
+
+//version 5
+ // Handle Input
+  var KEY_CODES = { 37:'left', 39:'right', 32 :'fire',38:"up",40:"down" };
+  this.keys = {};
+
+  this.setupInput = function() {
+    window.addEventListener('keydown',function(e) {
+      if(KEY_CODES[e.keyCode]) {
+       Game.keys[KEY_CODES[e.keyCode]] = true;
+       e.preventDefault();
+      }
+    },false);
+
+    window.addEventListener('keyup',function(e) {
+      if(KEY_CODES[e.keyCode]) {
+       Game.keys[KEY_CODES[e.keyCode]] = false; 
+       e.preventDefault();
+      }
+    },false);
+  };
